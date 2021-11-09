@@ -58,5 +58,20 @@ namespace MediaPlayer
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFastforward_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition += 10;
+        }
+
+        private void btnRewind_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= 10;
+        }
     }
 }
