@@ -18,3 +18,13 @@ C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media-Player\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media-Player\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\bin\Debug\MediaPlayer.exe
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\bin\Debug\MediaPlayer.pdb
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.AssemblyReference.cache
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.Form1.resources
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.GenerateResource.cache
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.exe
+C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.pdb
