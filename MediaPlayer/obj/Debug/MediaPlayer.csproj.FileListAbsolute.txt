@@ -28,3 +28,18 @@ C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\texgh\OneDrive\Documents\School\Rapid Application Dev. (SODV2101)\Media\MediaPlayer\obj\Debug\MediaPlayer.pdb
+F:\School\RapidApp\GiProject\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+F:\School\RapidApp\GiProject\MediaPlayer\bin\Debug\MediaPlayer.exe
+F:\School\RapidApp\GiProject\MediaPlayer\bin\Debug\MediaPlayer.pdb
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.csproj.AssemblyReference.cache
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.Form1.resources
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.csproj.GenerateResource.cache
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.exe
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.pdb
+F:\School\RapidApp\GiProject\MediaPlayer\bin\Debug\Interop.WMPLib.dll
+F:\School\RapidApp\GiProject\MediaPlayer\bin\Debug\AxInterop.WMPLib.dll
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\Interop.WMPLib.dll
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\AxInterop.WMPLib.dll
+F:\School\RapidApp\GiProject\MediaPlayer\obj\Debug\MediaPlayer.csproj.ResolveComReference.cache
