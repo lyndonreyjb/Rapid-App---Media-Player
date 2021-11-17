@@ -82,11 +82,13 @@ namespace MediaPlayer
             {
                 this.WindowState = FormWindowState.Maximized;
                 FormBorderStyle = FormBorderStyle.None;
+                menuStrip1.Hide();
             }
             else if (WindowState == FormWindowState.Maximized )
             {
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.Sizable;
+                menuStrip1.Show();
             } 
 
            // axWindowsMediaPlayer1.fullScreen = true; thiis makes the video player fullscreen but no controls or exit fullscreen
