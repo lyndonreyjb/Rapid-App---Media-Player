@@ -155,14 +155,14 @@ namespace MediaPlayer
 
         private void btnHideShowPlaylist_Click(object sender, EventArgs e)
         {
-            listBoxPlayList.Hide();
+            listBoxPlayList.Show();
             btnHideShowPlaylistCLICKED.Show();
             btnHideShowPlaylist.Hide();
         }
 
         private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e)
         {
-            listBoxPlayList.Show();
+            listBoxPlayList.Hide();
             btnHideShowPlaylistCLICKED.Hide();
             btnHideShowPlaylist.Show();
         }

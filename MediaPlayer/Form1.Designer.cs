@@ -317,7 +317,7 @@ namespace MediaPlayer
             this.btnHideShowPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideShowPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnHideShowPlaylist.Image")));
-            this.btnHideShowPlaylist.Location = new System.Drawing.Point(2, 26);
+            this.btnHideShowPlaylist.Location = new System.Drawing.Point(6, 19);
             this.btnHideShowPlaylist.Name = "btnHideShowPlaylist";
             this.btnHideShowPlaylist.Size = new System.Drawing.Size(42, 42);
             this.btnHideShowPlaylist.TabIndex = 14;
@@ -332,7 +332,7 @@ namespace MediaPlayer
             this.btnHideShowPlaylistCLICKED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylistCLICKED.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideShowPlaylistCLICKED.Image = ((System.Drawing.Image)(resources.GetObject("btnHideShowPlaylistCLICKED.Image")));
-            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(2, 26);
+            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(6, 19);
             this.btnHideShowPlaylistCLICKED.Name = "btnHideShowPlaylistCLICKED";
             this.btnHideShowPlaylistCLICKED.Size = new System.Drawing.Size(42, 42);
             this.btnHideShowPlaylistCLICKED.TabIndex = 15;
@@ -384,7 +384,6 @@ namespace MediaPlayer
             this.groupBox1.Size = new System.Drawing.Size(931, 76);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Form1
