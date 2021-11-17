@@ -42,6 +42,7 @@ namespace MediaPlayer
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeMediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,12 +55,13 @@ namespace MediaPlayer
             this.btnPause = new System.Windows.Forms.Button();
             this.btnHideShowPlaylist = new System.Windows.Forms.Button();
             this.btnHideShowPlaylistCLICKED = new System.Windows.Forms.Button();
-            this.closeMediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStop = new System.Windows.Forms.Button();
             this.picBoxMediaPlayIcon = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -69,7 +71,7 @@ namespace MediaPlayer
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(303, 518);
+            this.button1.Location = new System.Drawing.Point(307, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(53, 42);
             this.button1.TabIndex = 0;
@@ -83,7 +85,7 @@ namespace MediaPlayer
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(399, 518);
+            this.button2.Location = new System.Drawing.Point(403, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(53, 42);
             this.button2.TabIndex = 1;
@@ -97,7 +99,7 @@ namespace MediaPlayer
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(509, 518);
+            this.button3.Location = new System.Drawing.Point(513, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 42);
             this.button3.TabIndex = 2;
@@ -111,7 +113,7 @@ namespace MediaPlayer
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(244, 518);
+            this.button4.Location = new System.Drawing.Point(248, 21);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(53, 42);
             this.button4.TabIndex = 3;
@@ -124,7 +126,7 @@ namespace MediaPlayer
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(563, 518);
+            this.button5.Location = new System.Drawing.Point(567, 21);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(46, 42);
             this.button5.TabIndex = 4;
@@ -132,13 +134,13 @@ namespace MediaPlayer
             // 
             // axWindowsMediaPlayer1
             // 
-            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 29);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 476);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 536);
             this.axWindowsMediaPlayer1.TabIndex = 1;
             // 
             // btnFastforward
@@ -148,7 +150,7 @@ namespace MediaPlayer
             this.btnFastforward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFastforward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFastforward.Image = ((System.Drawing.Image)(resources.GetObject("btnFastforward.Image")));
-            this.btnFastforward.Location = new System.Drawing.Point(450, 518);
+            this.btnFastforward.Location = new System.Drawing.Point(454, 21);
             this.btnFastforward.Name = "btnFastforward";
             this.btnFastforward.Size = new System.Drawing.Size(53, 42);
             this.btnFastforward.TabIndex = 7;
@@ -162,7 +164,7 @@ namespace MediaPlayer
             this.btnRewind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRewind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRewind.Image = ((System.Drawing.Image)(resources.GetObject("btnRewind.Image")));
-            this.btnRewind.Location = new System.Drawing.Point(353, 518);
+            this.btnRewind.Location = new System.Drawing.Point(357, 21);
             this.btnRewind.Name = "btnRewind";
             this.btnRewind.Size = new System.Drawing.Size(53, 42);
             this.btnRewind.TabIndex = 8;
@@ -194,16 +196,23 @@ namespace MediaPlayer
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
             // 
             // openFolderToolStripMenuItem
             // 
             this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
-            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.openFolderToolStripMenuItem.Text = "Open Folder";
             this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
+            // 
+            // closeMediaToolStripMenuItem
+            // 
+            this.closeMediaToolStripMenuItem.Name = "closeMediaToolStripMenuItem";
+            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.closeMediaToolStripMenuItem.Text = "Close Media";
+            this.closeMediaToolStripMenuItem.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // controlsToolStripMenuItem
             // 
@@ -219,7 +228,7 @@ namespace MediaPlayer
             this.showToolStripMenuItem,
             this.hideToolStripMenuItem});
             this.playListToolStripMenuItem.Name = "playListToolStripMenuItem";
-            this.playListToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.playListToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.playListToolStripMenuItem.Text = "PlayList";
             // 
             // showToolStripMenuItem
@@ -249,7 +258,7 @@ namespace MediaPlayer
             this.btnFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFolder.Image = ((System.Drawing.Image)(resources.GetObject("btnFolder.Image")));
-            this.btnFolder.Location = new System.Drawing.Point(633, 518);
+            this.btnFolder.Location = new System.Drawing.Point(637, 21);
             this.btnFolder.Name = "btnFolder";
             this.btnFolder.Size = new System.Drawing.Size(42, 42);
             this.btnFolder.TabIndex = 10;
@@ -263,7 +272,7 @@ namespace MediaPlayer
             this.btnFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFullScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFullScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Image")));
-            this.btnFullScreen.Location = new System.Drawing.Point(873, 511);
+            this.btnFullScreen.Location = new System.Drawing.Point(870, 26);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(46, 42);
             this.btnFullScreen.TabIndex = 11;
@@ -275,11 +284,12 @@ namespace MediaPlayer
             this.listBoxPlayList.AllowDrop = true;
             this.listBoxPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.listBoxPlayList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxPlayList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxPlayList.FormatString = "D";
             this.listBoxPlayList.FormattingEnabled = true;
             this.listBoxPlayList.HorizontalScrollbar = true;
             this.listBoxPlayList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBoxPlayList.Location = new System.Drawing.Point(0, 436);
+            this.listBoxPlayList.Location = new System.Drawing.Point(0, 498);
             this.listBoxPlayList.MultiColumn = true;
             this.listBoxPlayList.Name = "listBoxPlayList";
             this.listBoxPlayList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
@@ -293,7 +303,7 @@ namespace MediaPlayer
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
-            this.btnPause.Location = new System.Drawing.Point(399, 518);
+            this.btnPause.Location = new System.Drawing.Point(403, 21);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(53, 42);
             this.btnPause.TabIndex = 13;
@@ -307,7 +317,7 @@ namespace MediaPlayer
             this.btnHideShowPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideShowPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnHideShowPlaylist.Image")));
-            this.btnHideShowPlaylist.Location = new System.Drawing.Point(5, 511);
+            this.btnHideShowPlaylist.Location = new System.Drawing.Point(2, 26);
             this.btnHideShowPlaylist.Name = "btnHideShowPlaylist";
             this.btnHideShowPlaylist.Size = new System.Drawing.Size(42, 42);
             this.btnHideShowPlaylist.TabIndex = 14;
@@ -322,19 +332,12 @@ namespace MediaPlayer
             this.btnHideShowPlaylistCLICKED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylistCLICKED.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideShowPlaylistCLICKED.Image = ((System.Drawing.Image)(resources.GetObject("btnHideShowPlaylistCLICKED.Image")));
-            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(5, 511);
+            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(2, 26);
             this.btnHideShowPlaylistCLICKED.Name = "btnHideShowPlaylistCLICKED";
             this.btnHideShowPlaylistCLICKED.Size = new System.Drawing.Size(42, 42);
             this.btnHideShowPlaylistCLICKED.TabIndex = 15;
             this.btnHideShowPlaylistCLICKED.UseVisualStyleBackColor = false;
             this.btnHideShowPlaylistCLICKED.Click += new System.EventHandler(this.btnHideShowPlaylistCLICKED_Click);
-            // 
-            // closeMediaToolStripMenuItem
-            // 
-            this.closeMediaToolStripMenuItem.Name = "closeMediaToolStripMenuItem";
-            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.closeMediaToolStripMenuItem.Text = "Close Media";
-            this.closeMediaToolStripMenuItem.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStop
             // 
@@ -343,7 +346,7 @@ namespace MediaPlayer
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.Location = new System.Drawing.Point(681, 518);
+            this.btnStop.Location = new System.Drawing.Point(685, 21);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(53, 42);
             this.btnStop.TabIndex = 16;
@@ -353,11 +356,36 @@ namespace MediaPlayer
             // picBoxMediaPlayIcon
             // 
             this.picBoxMediaPlayIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMediaPlayIcon.BackgroundImage")));
-            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(399, 204);
+            this.picBoxMediaPlayIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 29);
             this.picBoxMediaPlayIcon.Name = "picBoxMediaPlayIcon";
-            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(104, 95);
+            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 469);
             this.picBoxMediaPlayIcon.TabIndex = 17;
             this.picBoxMediaPlayIcon.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnFastforward);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnStop);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnHideShowPlaylistCLICKED);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnHideShowPlaylist);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnPause);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnRewind);
+            this.groupBox1.Controls.Add(this.btnFullScreen);
+            this.groupBox1.Controls.Add(this.btnFolder);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 422);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(931, 76);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Form1
             // 
@@ -365,22 +393,10 @@ namespace MediaPlayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(931, 565);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.picBoxMediaPlayIcon);
-            this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnHideShowPlaylistCLICKED);
-            this.Controls.Add(this.btnHideShowPlaylist);
-            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.listBoxPlayList);
-            this.Controls.Add(this.btnFullScreen);
-            this.Controls.Add(this.btnFolder);
-            this.Controls.Add(this.btnRewind);
-            this.Controls.Add(this.btnFastforward);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -390,6 +406,7 @@ namespace MediaPlayer
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,6 +441,7 @@ namespace MediaPlayer
         private System.Windows.Forms.ToolStripMenuItem closeMediaToolStripMenuItem;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox picBoxMediaPlayIcon;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

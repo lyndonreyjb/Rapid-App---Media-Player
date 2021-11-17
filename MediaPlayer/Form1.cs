@@ -173,5 +173,10 @@ namespace MediaPlayer
             axWindowsMediaPlayer1.Hide();
             picBoxMediaPlayIcon.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

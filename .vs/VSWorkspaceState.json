@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MediaPlayer"
   ],
-  "SelectedNode": "\\MediaPlayer.sln",
+  "SelectedNode": "\\MediaPlayer\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
