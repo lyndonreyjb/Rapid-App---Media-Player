@@ -23,6 +23,11 @@ namespace MediaPlayer
         public Form1()
         {
             InitializeComponent();
+            menuStrip1.BackColor = Color.Pink;
+            btnHideShowPlaylistCLICKED.Hide();
+            listBoxPlayList.Hide();
+            axWindowsMediaPlayer1.Hide();
+            btnPause.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e) // this is the start button 
@@ -34,11 +39,12 @@ namespace MediaPlayer
         {
 
 
-
+            axWindowsMediaPlayer1.Show();
             axWindowsMediaPlayer1.Ctlcontrols.play();
 
             button2.Hide();
             btnPause.Show();
+            picBoxMediaPlayIcon.Hide();
 
 
 
@@ -103,7 +109,7 @@ namespace MediaPlayer
 
 
             OpenFileDialog ofd2 = new OpenFileDialog();
-            ofd2.Title = "Open Video";
+            ofd2.Title = "Open Media File";
             ofd2.Filter = "Video | *.mp4"; // editied to to play video files previously couldnt show video file types
            // ofd2.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             ofd2.Multiselect = true;
@@ -125,7 +131,11 @@ namespace MediaPlayer
                 listBoxPlayList.SelectedIndex = 0;
                
                 axWindowsMediaPlayer1.URL = vPath;
-              
+                axWindowsMediaPlayer1.Show();
+                picBoxMediaPlayIcon.Hide();
+                button2.Hide();
+                btnPause.Show();
+
             }
 
 
@@ -141,6 +151,27 @@ namespace MediaPlayer
         private void button3_Click(object sender, EventArgs e) // this is the next button
         {
             axWindowsMediaPlayer1.Ctlcontrols.next();
+        }
+
+        private void btnHideShowPlaylist_Click(object sender, EventArgs e)
+        {
+            listBoxPlayList.Hide();
+            btnHideShowPlaylistCLICKED.Show();
+            btnHideShowPlaylist.Hide();
+        }
+
+        private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e)
+        {
+            listBoxPlayList.Show();
+            btnHideShowPlaylistCLICKED.Hide();
+            btnHideShowPlaylist.Show();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            axWindowsMediaPlayer1.Hide();
+            picBoxMediaPlayIcon.Show();
         }
     }
 }
