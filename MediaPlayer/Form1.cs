@@ -124,13 +124,17 @@ namespace MediaPlayer
                 vPath = ofd2.FileName;
                 listBoxPlayList.Items.Clear();
 
-                for (int i = 0; i < filename.Length; i++)
+               /* for (int i = 0; i < filename.Length; i++)
                 {
 
 
 
                     listBoxPlayList.Items.Add(filename[i]) ;
                    
+                }*/
+                foreach(string filename  in ofd2.SafeFileNames)
+                {
+                    listBoxPlayList.Items.Add(filename);
                 }
                 listBoxPlayList.SelectedIndex = 0;
                
