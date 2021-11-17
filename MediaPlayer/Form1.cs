@@ -80,11 +80,13 @@ namespace MediaPlayer
         { 
             if(WindowState ==  FormWindowState.Normal )  // doesnt resize video player and buttons properly 
             {
-                this.WindowState = FormWindowState.Maximized; 
+                this.WindowState = FormWindowState.Maximized;
+                FormBorderStyle = FormBorderStyle.None;
             }
             else if (WindowState == FormWindowState.Maximized )
             {
                 this.WindowState = FormWindowState.Normal;
+                FormBorderStyle = FormBorderStyle.Sizable;
             } 
 
            // axWindowsMediaPlayer1.fullScreen = true; thiis makes the video player fullscreen but no controls or exit fullscreen
