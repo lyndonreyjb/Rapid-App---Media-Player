@@ -73,3 +73,23 @@ C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaP
 C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
 C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.pdb
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\MediaPlayer.exe
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\MediaPlayer.pdb
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Interop.WMPLib.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\AxInterop.WMPLib.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\Interop.WMPLib.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\AxInterop.WMPLib.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.ResolveComReference.cache
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.Form1.resources
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.GenerateResource.cache
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.exe
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.pdb
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsoft.DirectX.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.dll
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.xml
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CopyComplete
+D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.AssemblyReference.cache
