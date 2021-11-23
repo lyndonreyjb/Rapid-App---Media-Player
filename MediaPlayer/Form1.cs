@@ -20,6 +20,7 @@ namespace MediaPlayer
         private int selectedIndex = 0;
         string[] vPath;
         string filename;
+        double SkipReverseSpeed = 30; //default value for skip/reverse button 
         
 
         public Form1()
@@ -30,12 +31,14 @@ namespace MediaPlayer
             listBoxPlayList.Hide();
             axWindowsMediaPlayer1.Hide();
             btnPause.Hide();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
           
             Time.Start();
+           
         }
 
         private void PrevBtn_Click(object sender, EventArgs e) // this is the prev
@@ -83,12 +86,12 @@ namespace MediaPlayer
 
         private void btnFastforward_Click(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Ctlcontrols.currentPosition += 10;
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition += SkipReverseSpeed;
         }
 
         private void btnRewind_Click(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= 10;
+              axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= SkipReverseSpeed;
         }
 
         private void btnFullScreen_Click(object sender, EventArgs e) // Based on lyndons fullscreen method
@@ -213,6 +216,58 @@ namespace MediaPlayer
         private void listBoxPlayList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex];
+        }
+
+        private void x05ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 0.5
+        {
+            
+            axWindowsMediaPlayer1.settings.rate = 0.5;
+           
+        }
+
+        private void x10ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 1
+        {
+            axWindowsMediaPlayer1.settings.rate = 1;
+            
+        }
+
+        private void x2ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 2
+        {
+            axWindowsMediaPlayer1.settings.rate = 2;
+        }
+
+        private void x3ToolStripMenuItem_Click(object sender, EventArgs e)// toolstrip - controls -media speed - 3
+        {
+            axWindowsMediaPlayer1.settings.rate = 3;
+        }
+
+        private void secondsToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip Skip/Reverse - toggle - 10secs
+        {
+            SkipReverseSpeed = 10;
+        }
+
+        private void secondsToolStripMenuItem1_Click(object sender, EventArgs e) // toolstrip Skip/Reverse - toggle - 30secs
+        {
+            SkipReverseSpeed = 30;
+        }
+
+        private void minuteToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip Skip/Reverse - toggle - 1min
+        {
+            
+            SkipReverseSpeed = 60;
+        }
+
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e) // show hide credits 
+        {
+           
+           
+           
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
         }
     }
 }

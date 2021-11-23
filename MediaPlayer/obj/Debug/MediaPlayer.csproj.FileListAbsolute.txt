@@ -93,3 +93,11 @@ D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsof
 D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.xml
 D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CopyComplete
 D:\School Work\Year 2\Rapid App\Project\New Media\MediaPlayer\obj\Debug\MediaPlayer.csproj.AssemblyReference.cache
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.dll
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.dll
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.xml
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.xml
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.xml
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.CopyComplete
+C:\Users\Salman Virji\Source\Repos\Lyndon-Bualat\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.About.resources

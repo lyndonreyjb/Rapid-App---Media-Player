@@ -47,6 +47,15 @@ namespace MediaPlayer
             this.playListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mediaSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x05ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.x3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skipReverseSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.secondsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.secondsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnFolder = new System.Windows.Forms.Button();
             this.btnFullScreen = new System.Windows.Forms.Button();
@@ -176,7 +185,7 @@ namespace MediaPlayer
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(931, 29);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -187,36 +196,38 @@ namespace MediaPlayer
             this.openFolderToolStripMenuItem,
             this.closeMediaToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 25);
             this.toolStripMenuItem1.Text = "Media";
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
             // 
             // openFolderToolStripMenuItem
             // 
             this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
-            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.openFolderToolStripMenuItem.Text = "Open Folder";
             this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
             // 
             // closeMediaToolStripMenuItem
             // 
             this.closeMediaToolStripMenuItem.Name = "closeMediaToolStripMenuItem";
-            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.closeMediaToolStripMenuItem.Text = "Close Media";
             this.closeMediaToolStripMenuItem.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // controlsToolStripMenuItem
             // 
             this.controlsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.playListToolStripMenuItem});
+            this.playListToolStripMenuItem,
+            this.mediaSpeedToolStripMenuItem,
+            this.skipReverseSpeedToolStripMenuItem});
             this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
-            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.controlsToolStripMenuItem.Text = "Controls";
             // 
             // playListToolStripMenuItem
@@ -225,28 +236,99 @@ namespace MediaPlayer
             this.showToolStripMenuItem,
             this.hideToolStripMenuItem});
             this.playListToolStripMenuItem.Name = "playListToolStripMenuItem";
-            this.playListToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.playListToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.playListToolStripMenuItem.Text = "PlayList";
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylistCLICKED_Click);
             // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.hideToolStripMenuItem.Text = "Hide";
             this.hideToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
+            // 
+            // mediaSpeedToolStripMenuItem
+            // 
+            this.mediaSpeedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.x05ToolStripMenuItem,
+            this.x10ToolStripMenuItem,
+            this.x2ToolStripMenuItem,
+            this.x3ToolStripMenuItem});
+            this.mediaSpeedToolStripMenuItem.Name = "mediaSpeedToolStripMenuItem";
+            this.mediaSpeedToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.mediaSpeedToolStripMenuItem.Text = "Media Speed";
+            // 
+            // x05ToolStripMenuItem
+            // 
+            this.x05ToolStripMenuItem.Name = "x05ToolStripMenuItem";
+            this.x05ToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.x05ToolStripMenuItem.Text = "x0.5";
+            this.x05ToolStripMenuItem.Click += new System.EventHandler(this.x05ToolStripMenuItem_Click);
+            // 
+            // x10ToolStripMenuItem
+            // 
+            this.x10ToolStripMenuItem.Name = "x10ToolStripMenuItem";
+            this.x10ToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.x10ToolStripMenuItem.Text = "x1.0";
+            this.x10ToolStripMenuItem.Click += new System.EventHandler(this.x10ToolStripMenuItem_Click);
+            // 
+            // x2ToolStripMenuItem
+            // 
+            this.x2ToolStripMenuItem.Name = "x2ToolStripMenuItem";
+            this.x2ToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.x2ToolStripMenuItem.Text = "x2.0";
+            this.x2ToolStripMenuItem.Click += new System.EventHandler(this.x2ToolStripMenuItem_Click);
+            // 
+            // x3ToolStripMenuItem
+            // 
+            this.x3ToolStripMenuItem.Name = "x3ToolStripMenuItem";
+            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.x3ToolStripMenuItem.Text = "x3.0";
+            this.x3ToolStripMenuItem.Click += new System.EventHandler(this.x3ToolStripMenuItem_Click);
+            // 
+            // skipReverseSpeedToolStripMenuItem
+            // 
+            this.skipReverseSpeedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.secondsToolStripMenuItem,
+            this.secondsToolStripMenuItem1,
+            this.minuteToolStripMenuItem});
+            this.skipReverseSpeedToolStripMenuItem.Name = "skipReverseSpeedToolStripMenuItem";
+            this.skipReverseSpeedToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.skipReverseSpeedToolStripMenuItem.Text = "Skip/Reverse Speed";
+            // 
+            // secondsToolStripMenuItem
+            // 
+            this.secondsToolStripMenuItem.Name = "secondsToolStripMenuItem";
+            this.secondsToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.secondsToolStripMenuItem.Text = "10 Seconds ";
+            this.secondsToolStripMenuItem.Click += new System.EventHandler(this.secondsToolStripMenuItem_Click);
+            // 
+            // secondsToolStripMenuItem1
+            // 
+            this.secondsToolStripMenuItem1.Name = "secondsToolStripMenuItem1";
+            this.secondsToolStripMenuItem1.Size = new System.Drawing.Size(164, 26);
+            this.secondsToolStripMenuItem1.Text = "30 Seconds ";
+            this.secondsToolStripMenuItem1.Click += new System.EventHandler(this.secondsToolStripMenuItem1_Click);
+            // 
+            // minuteToolStripMenuItem
+            // 
+            this.minuteToolStripMenuItem.Name = "minuteToolStripMenuItem";
+            this.minuteToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.minuteToolStripMenuItem.Text = "1 Minute";
+            this.minuteToolStripMenuItem.Click += new System.EventHandler(this.minuteToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // btnFolder
             // 
@@ -354,9 +436,9 @@ namespace MediaPlayer
             // 
             this.picBoxMediaPlayIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMediaPlayIcon.BackgroundImage")));
             this.picBoxMediaPlayIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 24);
+            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 29);
             this.picBoxMediaPlayIcon.Name = "picBoxMediaPlayIcon";
-            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 474);
+            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 469);
             this.picBoxMediaPlayIcon.TabIndex = 17;
             this.picBoxMediaPlayIcon.TabStop = false;
             // 
@@ -431,11 +513,11 @@ namespace MediaPlayer
             // 
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 24);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 29);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 541);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 536);
             this.axWindowsMediaPlayer1.TabIndex = 1;
             // 
             // Time
@@ -505,6 +587,15 @@ namespace MediaPlayer
         private System.Windows.Forms.Label Volumelbl;
         private System.Windows.Forms.Label Duration;
         private System.Windows.Forms.Timer Time;
+        private System.Windows.Forms.ToolStripMenuItem mediaSpeedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x05ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x10ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem x3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skipReverseSpeedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem secondsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem secondsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem minuteToolStripMenuItem;
     }
 }
 
