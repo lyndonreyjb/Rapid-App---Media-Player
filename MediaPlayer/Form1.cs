@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-//using Microsoft.DirectX.AudioVideoPlayback;
+using Microsoft.DirectX.AudioVideoPlayback;
 using WMPLib;
 
 namespace MediaPlayer
@@ -17,8 +17,8 @@ namespace MediaPlayer
     public partial class Form1 : Form
     {
         SoundPlayer player = new SoundPlayer();
-        private List<string> vidPaths = new List<string>();
-        string vPath;
+        private int selectedIndex = 0;
+        string[] vPath;
         string filename;
         
 
@@ -34,18 +34,35 @@ namespace MediaPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
+            Time.Start();
         }
 
-
-        private void PrevBtn_Click(object sender, EventArgs e) // this is the start button 
+        private void PrevBtn_Click(object sender, EventArgs e) // this is the prev
         {
-
+            int index = listBoxPlayList.SelectedIndex;
+            index--;
+            if (index == -1)
+            {
+                index = vPath[listBoxPlayList.SelectedIndex].Count() - 1;
+            }
+            selectedIndex = index;
+            listBoxPlayList.SelectedIndex = index;
+           
         }
 
         private void NextBtn_Click(object sender, EventArgs e) // this is the next button
         {
-            axWindowsMediaPlayer1.Ctlcontrols.next();
+
+            int index = listBoxPlayList.SelectedIndex;
+            index++;
+            if (index > vPath[listBoxPlayList.SelectedIndex].Count() - 1)
+            {
+                index = 0;
+            }
+            selectedIndex = index;
+            listBoxPlayList.SelectedIndex = index;
+          
         }
 
         private void PlayBtn_Click(object sender, EventArgs e) // this is the play button
@@ -111,28 +128,26 @@ namespace MediaPlayer
 
             OpenFileDialog ofd2 = new OpenFileDialog();
             ofd2.Title = "Open Media File";
-            ofd2.Filter = "Video | *.mp4"; // editied to to play video files previously couldnt show video file types
-           // ofd2.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ofd2.Filter = "WMV |*.wmv|WAV|*.wav|MP3|*.mp3|MP4|*.mp4|MKV|*.mkv"; // editied to to play video files previously couldnt show video file types                                                                                // ofd2.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             ofd2.Multiselect = true;
             
             if (ofd2.ShowDialog() == DialogResult.OK)
             {
                 filename = ofd2.SafeFileName;
-                vPath = ofd2.FileName;
+                vPath = ofd2.FileNames;
                 listBoxPlayList.Items.Clear();
 
-               /* for (int i = 0; i < filename.Length; i++)
-                {
-                    listBoxPlayList.Items.Add(filename[i]) ;                  
-                }*/
-
+                /* for (int i = 0; i < filename.Length; i++)
+                 {
+                     listBoxPlayList.Items.Add(filename[i]) ;                  
+                 }*/
                 foreach(string filename  in ofd2.SafeFileNames)
                 {
                     listBoxPlayList.Items.Add(filename);
                 }
                 listBoxPlayList.SelectedIndex = 0;
-               
-                axWindowsMediaPlayer1.URL = vPath;
+             
+                axWindowsMediaPlayer1.URL = axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex];
                 axWindowsMediaPlayer1.Show();
                 picBoxMediaPlayIcon.Hide();
                 PlayBtn.Hide();
@@ -174,5 +189,30 @@ namespace MediaPlayer
 
         }
 
+        private void VolumeSlider_Scroll(object sender, EventArgs e)
+        {
+            Volumelbl.Text = VolumeSlider.Value.ToString() + '%';
+        }
+
+        private void VolumeSlider_MouseMove(object sender, MouseEventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.volume = VolumeSlider.Value;
+            Volumelbl.Text = VolumeSlider.Value.ToString() + '%';
+        }
+
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+        }
+        private void LengthSlider_Scroll(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = LengthSlider.Value;
+            Duration.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
+        }
+
+        private void listBoxPlayList_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex];
+        }
     }
 }

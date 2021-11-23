@@ -29,13 +29,13 @@ namespace MediaPlayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.PrevBtn = new System.Windows.Forms.Button();
             this.PlayBtn = new System.Windows.Forms.Button();
             this.NextBtn = new System.Windows.Forms.Button();
             this.RptBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnFastforward = new System.Windows.Forms.Button();
             this.btnRewind = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -58,14 +58,18 @@ namespace MediaPlayer
             this.btnStop = new System.Windows.Forms.Button();
             this.picBoxMediaPlayIcon = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.Duration = new System.Windows.Forms.Label();
+            this.Volumelbl = new System.Windows.Forms.Label();
+            this.VolumeSlider = new System.Windows.Forms.TrackBar();
+            this.LengthSlider = new System.Windows.Forms.TrackBar();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.Time = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LengthSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // PrevBtn
@@ -135,17 +139,6 @@ namespace MediaPlayer
             this.button5.Size = new System.Drawing.Size(46, 42);
             this.button5.TabIndex = 4;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 24);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 541);
-            this.axWindowsMediaPlayer1.TabIndex = 1;
             // 
             // btnFastforward
             // 
@@ -296,9 +289,9 @@ namespace MediaPlayer
             this.listBoxPlayList.Location = new System.Drawing.Point(0, 498);
             this.listBoxPlayList.MultiColumn = true;
             this.listBoxPlayList.Name = "listBoxPlayList";
-            this.listBoxPlayList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxPlayList.Size = new System.Drawing.Size(931, 67);
             this.listBoxPlayList.TabIndex = 12;
+            this.listBoxPlayList.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayList_SelectedIndexChanged_1);
             // 
             // btnPause
             // 
@@ -369,7 +362,9 @@ namespace MediaPlayer
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.trackBar1);
+            this.groupBox1.Controls.Add(this.Duration);
+            this.groupBox1.Controls.Add(this.Volumelbl);
+            this.groupBox1.Controls.Add(this.VolumeSlider);
             this.groupBox1.Controls.Add(this.btnFastforward);
             this.groupBox1.Controls.Add(this.PrevBtn);
             this.groupBox1.Controls.Add(this.btnStop);
@@ -383,7 +378,7 @@ namespace MediaPlayer
             this.groupBox1.Controls.Add(this.btnRewind);
             this.groupBox1.Controls.Add(this.btnFullScreen);
             this.groupBox1.Controls.Add(this.btnFolder);
-            this.groupBox1.Controls.Add(this.trackBar2);
+            this.groupBox1.Controls.Add(this.LengthSlider);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 422);
             this.groupBox1.Name = "groupBox1";
@@ -392,19 +387,60 @@ namespace MediaPlayer
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // trackBar1
+            // Duration
             // 
-            this.trackBar1.Location = new System.Drawing.Point(93, 21);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(112, 45);
-            this.trackBar1.TabIndex = 17;
+            this.Duration.AutoSize = true;
+            this.Duration.Location = new System.Drawing.Point(19, 3);
+            this.Duration.Name = "Duration";
+            this.Duration.Size = new System.Drawing.Size(13, 13);
+            this.Duration.TabIndex = 20;
+            this.Duration.Text = "0";
             // 
-            // trackBar2
+            // Volumelbl
             // 
-            this.trackBar2.Location = new System.Drawing.Point(0, 0);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(931, 45);
-            this.trackBar2.TabIndex = 18;
+            this.Volumelbl.AutoSize = true;
+            this.Volumelbl.Location = new System.Drawing.Point(74, 26);
+            this.Volumelbl.Name = "Volumelbl";
+            this.Volumelbl.Size = new System.Drawing.Size(13, 13);
+            this.Volumelbl.TabIndex = 19;
+            this.Volumelbl.Text = "0";
+            // 
+            // VolumeSlider
+            // 
+            this.VolumeSlider.Location = new System.Drawing.Point(93, 21);
+            this.VolumeSlider.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.VolumeSlider.Maximum = 100;
+            this.VolumeSlider.Name = "VolumeSlider";
+            this.VolumeSlider.Size = new System.Drawing.Size(112, 45);
+            this.VolumeSlider.TabIndex = 17;
+            this.VolumeSlider.Scroll += new System.EventHandler(this.VolumeSlider_Scroll);
+            this.VolumeSlider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.VolumeSlider_MouseMove);
+            // 
+            // LengthSlider
+            // 
+            this.LengthSlider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LengthSlider.LargeChange = 2;
+            this.LengthSlider.Location = new System.Drawing.Point(38, 0);
+            this.LengthSlider.Maximum = 100;
+            this.LengthSlider.Name = "LengthSlider";
+            this.LengthSlider.Size = new System.Drawing.Size(893, 45);
+            this.LengthSlider.TabIndex = 18;
+            this.LengthSlider.Scroll += new System.EventHandler(this.LengthSlider_Scroll);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 24);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 541);
+            this.axWindowsMediaPlayer1.TabIndex = 1;
+            // 
+            // Time
+            // 
+            this.Time.Tick += new System.EventHandler(this.Time_Tick);
             // 
             // Form1
             // 
@@ -421,14 +457,14 @@ namespace MediaPlayer
             this.Name = "Form1";
             this.Text = "Media Player";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LengthSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,8 +500,11 @@ namespace MediaPlayer
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox picBoxMediaPlayIcon;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar VolumeSlider;
+        private System.Windows.Forms.TrackBar LengthSlider;
+        private System.Windows.Forms.Label Volumelbl;
+        private System.Windows.Forms.Label Duration;
+        private System.Windows.Forms.Timer Time;
     }
 }
 
