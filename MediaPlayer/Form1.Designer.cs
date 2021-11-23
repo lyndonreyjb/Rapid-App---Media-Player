@@ -242,16 +242,16 @@ namespace MediaPlayer
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.showToolStripMenuItem.Text = "Show";
-            this.showToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylistCLICKED_Click);
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
             // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.hideToolStripMenuItem.Text = "Hide";
-            this.hideToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
+            this.hideToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylistCLICKED_Click);
             // 
             // mediaSpeedToolStripMenuItem
             // 
@@ -363,15 +363,17 @@ namespace MediaPlayer
             this.listBoxPlayList.AllowDrop = true;
             this.listBoxPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.listBoxPlayList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxPlayList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBoxPlayList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBoxPlayList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPlayList.FormatString = "D";
             this.listBoxPlayList.FormattingEnabled = true;
             this.listBoxPlayList.HorizontalScrollbar = true;
             this.listBoxPlayList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBoxPlayList.Location = new System.Drawing.Point(0, 498);
-            this.listBoxPlayList.MultiColumn = true;
+            this.listBoxPlayList.ItemHeight = 18;
+            this.listBoxPlayList.Location = new System.Drawing.Point(0, 509);
             this.listBoxPlayList.Name = "listBoxPlayList";
-            this.listBoxPlayList.Size = new System.Drawing.Size(931, 67);
+            this.listBoxPlayList.Size = new System.Drawing.Size(931, 56);
             this.listBoxPlayList.TabIndex = 12;
             this.listBoxPlayList.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayList_SelectedIndexChanged_1);
             // 
@@ -438,7 +440,7 @@ namespace MediaPlayer
             this.picBoxMediaPlayIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 29);
             this.picBoxMediaPlayIcon.Name = "picBoxMediaPlayIcon";
-            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 469);
+            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 480);
             this.picBoxMediaPlayIcon.TabIndex = 17;
             this.picBoxMediaPlayIcon.TabStop = false;
             // 
@@ -462,7 +464,7 @@ namespace MediaPlayer
             this.groupBox1.Controls.Add(this.btnFolder);
             this.groupBox1.Controls.Add(this.LengthSlider);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 422);
+            this.groupBox1.Location = new System.Drawing.Point(0, 433);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(931, 76);
             this.groupBox1.TabIndex = 18;
