@@ -30,10 +30,10 @@ namespace MediaPlayer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.PrevBtn = new System.Windows.Forms.Button();
+            this.PlayBtn = new System.Windows.Forms.Button();
+            this.NextBtn = new System.Windows.Forms.Button();
+            this.RptBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnFastforward = new System.Windows.Forms.Button();
@@ -58,66 +58,70 @@ namespace MediaPlayer
             this.btnStop = new System.Windows.Forms.Button();
             this.picBoxMediaPlayIcon = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // PrevBtn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(307, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 42);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PrevBtn.FlatAppearance.BorderSize = 0;
+            this.PrevBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.PrevBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrevBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrevBtn.Image = ((System.Drawing.Image)(resources.GetObject("PrevBtn.Image")));
+            this.PrevBtn.Location = new System.Drawing.Point(307, 21);
+            this.PrevBtn.Name = "PrevBtn";
+            this.PrevBtn.Size = new System.Drawing.Size(53, 42);
+            this.PrevBtn.TabIndex = 0;
+            this.PrevBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // PlayBtn
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(403, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 42);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.PlayBtn.FlatAppearance.BorderSize = 0;
+            this.PlayBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.PlayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayBtn.Image = ((System.Drawing.Image)(resources.GetObject("PlayBtn.Image")));
+            this.PlayBtn.Location = new System.Drawing.Point(403, 21);
+            this.PlayBtn.Name = "PlayBtn";
+            this.PlayBtn.Size = new System.Drawing.Size(53, 42);
+            this.PlayBtn.TabIndex = 1;
+            this.PlayBtn.UseVisualStyleBackColor = true;
+            this.PlayBtn.Click += new System.EventHandler(this.PlayBtn_Click);
             // 
-            // button3
+            // NextBtn
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(513, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 42);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.NextBtn.FlatAppearance.BorderSize = 0;
+            this.NextBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.NextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextBtn.Image = ((System.Drawing.Image)(resources.GetObject("NextBtn.Image")));
+            this.NextBtn.Location = new System.Drawing.Point(513, 21);
+            this.NextBtn.Name = "NextBtn";
+            this.NextBtn.Size = new System.Drawing.Size(45, 42);
+            this.NextBtn.TabIndex = 2;
+            this.NextBtn.UseVisualStyleBackColor = true;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
-            // button4
+            // RptBtn
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(248, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 42);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.RptBtn.FlatAppearance.BorderSize = 0;
+            this.RptBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.RptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RptBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RptBtn.Image = ((System.Drawing.Image)(resources.GetObject("RptBtn.Image")));
+            this.RptBtn.Location = new System.Drawing.Point(248, 21);
+            this.RptBtn.Name = "RptBtn";
+            this.RptBtn.Size = new System.Drawing.Size(53, 42);
+            this.RptBtn.TabIndex = 3;
+            this.RptBtn.UseVisualStyleBackColor = true;
+            this.RptBtn.Click += new System.EventHandler(this.RptBtn_Click);
             // 
             // button5
             // 
@@ -136,11 +140,11 @@ namespace MediaPlayer
             // 
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 29);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 24);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 536);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 541);
             this.axWindowsMediaPlayer1.TabIndex = 1;
             // 
             // btnFastforward
@@ -179,7 +183,7 @@ namespace MediaPlayer
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,27 +194,27 @@ namespace MediaPlayer
             this.openFolderToolStripMenuItem,
             this.closeMediaToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 25);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.toolStripMenuItem1.Text = "Media";
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
             // 
             // openFolderToolStripMenuItem
             // 
             this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
-            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.openFolderToolStripMenuItem.Text = "Open Folder";
             this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.btnFolder_Click);
             // 
             // closeMediaToolStripMenuItem
             // 
             this.closeMediaToolStripMenuItem.Name = "closeMediaToolStripMenuItem";
-            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.closeMediaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.closeMediaToolStripMenuItem.Text = "Close Media";
             this.closeMediaToolStripMenuItem.Click += new System.EventHandler(this.btnStop_Click);
             // 
@@ -219,7 +223,7 @@ namespace MediaPlayer
             this.controlsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playListToolStripMenuItem});
             this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
-            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.controlsToolStripMenuItem.Text = "Controls";
             // 
             // playListToolStripMenuItem
@@ -228,27 +232,27 @@ namespace MediaPlayer
             this.showToolStripMenuItem,
             this.hideToolStripMenuItem});
             this.playListToolStripMenuItem.Name = "playListToolStripMenuItem";
-            this.playListToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.playListToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.playListToolStripMenuItem.Text = "PlayList";
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylistCLICKED_Click);
             // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.hideToolStripMenuItem.Text = "Hide";
             this.hideToolStripMenuItem.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // btnFolder
@@ -332,7 +336,7 @@ namespace MediaPlayer
             this.btnHideShowPlaylistCLICKED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylistCLICKED.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideShowPlaylistCLICKED.Image = ((System.Drawing.Image)(resources.GetObject("btnHideShowPlaylistCLICKED.Image")));
-            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(6, 19);
+            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(6, 28);
             this.btnHideShowPlaylistCLICKED.Name = "btnHideShowPlaylistCLICKED";
             this.btnHideShowPlaylistCLICKED.Size = new System.Drawing.Size(42, 42);
             this.btnHideShowPlaylistCLICKED.TabIndex = 15;
@@ -357,27 +361,29 @@ namespace MediaPlayer
             // 
             this.picBoxMediaPlayIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMediaPlayIcon.BackgroundImage")));
             this.picBoxMediaPlayIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 29);
+            this.picBoxMediaPlayIcon.Location = new System.Drawing.Point(0, 24);
             this.picBoxMediaPlayIcon.Name = "picBoxMediaPlayIcon";
-            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 469);
+            this.picBoxMediaPlayIcon.Size = new System.Drawing.Size(931, 474);
             this.picBoxMediaPlayIcon.TabIndex = 17;
             this.picBoxMediaPlayIcon.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.btnFastforward);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.PrevBtn);
             this.groupBox1.Controls.Add(this.btnStop);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.PlayBtn);
             this.groupBox1.Controls.Add(this.btnHideShowPlaylistCLICKED);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.NextBtn);
             this.groupBox1.Controls.Add(this.btnHideShowPlaylist);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.RptBtn);
             this.groupBox1.Controls.Add(this.btnPause);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnRewind);
             this.groupBox1.Controls.Add(this.btnFullScreen);
             this.groupBox1.Controls.Add(this.btnFolder);
+            this.groupBox1.Controls.Add(this.trackBar2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 422);
             this.groupBox1.Name = "groupBox1";
@@ -385,6 +391,20 @@ namespace MediaPlayer
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(93, 21);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(112, 45);
+            this.trackBar1.TabIndex = 17;
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(0, 0);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(931, 45);
+            this.trackBar2.TabIndex = 18;
             // 
             // Form1
             // 
@@ -406,6 +426,9 @@ namespace MediaPlayer
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMediaPlayIcon)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,10 +436,10 @@ namespace MediaPlayer
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PrevBtn;
+        private System.Windows.Forms.Button PlayBtn;
+        private System.Windows.Forms.Button NextBtn;
+        private System.Windows.Forms.Button RptBtn;
         private System.Windows.Forms.Button button5;
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button btnFastforward;
@@ -441,6 +464,8 @@ namespace MediaPlayer
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox picBoxMediaPlayIcon;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }
 

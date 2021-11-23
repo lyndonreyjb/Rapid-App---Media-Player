@@ -10,15 +10,17 @@ using System.Windows.Forms;
 using System.IO;
 using System.Media;
 //using Microsoft.DirectX.AudioVideoPlayback;
-//using WMPLib;
+using WMPLib;
 
 namespace MediaPlayer
 {
     public partial class Form1 : Form
     {
         SoundPlayer player = new SoundPlayer();
+        private List<string> vidPaths = new List<string>();
         string vPath;
         string filename;
+        
 
         public Form1()
         {
@@ -30,40 +32,36 @@ namespace MediaPlayer
             btnPause.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e) // this is the start button 
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 0;
-        }
-
-        private void button2_Click(object sender, EventArgs e) // this is the play button
-        {
-
-
-            axWindowsMediaPlayer1.Show();
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-
-            button2.Hide();
-            btnPause.Show();
-            picBoxMediaPlayIcon.Hide();
-
-
-
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void PrevBtn_Click(object sender, EventArgs e) // this is the start button 
+        {
+
+        }
+
+        private void NextBtn_Click(object sender, EventArgs e) // this is the next button
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.next();
+        }
+
+        private void PlayBtn_Click(object sender, EventArgs e) // this is the play button
+        {
+            axWindowsMediaPlayer1.Show();
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+
+            PlayBtn.Hide();
+            btnPause.Show();
+            picBoxMediaPlayIcon.Hide();
+        }
+
+
+        private void RptBtn_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 0;
         }
 
         private void btnFastforward_Click(object sender, EventArgs e)
@@ -111,7 +109,6 @@ namespace MediaPlayer
             // }
 
 
-
             OpenFileDialog ofd2 = new OpenFileDialog();
             ofd2.Title = "Open Media File";
             ofd2.Filter = "Video | *.mp4"; // editied to to play video files previously couldnt show video file types
@@ -126,12 +123,9 @@ namespace MediaPlayer
 
                /* for (int i = 0; i < filename.Length; i++)
                 {
-
-
-
-                    listBoxPlayList.Items.Add(filename[i]) ;
-                   
+                    listBoxPlayList.Items.Add(filename[i]) ;                  
                 }*/
+
                 foreach(string filename  in ofd2.SafeFileNames)
                 {
                     listBoxPlayList.Items.Add(filename);
@@ -141,24 +135,17 @@ namespace MediaPlayer
                 axWindowsMediaPlayer1.URL = vPath;
                 axWindowsMediaPlayer1.Show();
                 picBoxMediaPlayIcon.Hide();
-                button2.Hide();
+                PlayBtn.Hide();
                 btnPause.Show();
 
             }
-
-
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
-            button2.Show();
+            PlayBtn.Show();
             btnPause.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e) // this is the next button
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.next();
         }
 
         private void btnHideShowPlaylist_Click(object sender, EventArgs e)
@@ -186,5 +173,6 @@ namespace MediaPlayer
         {
 
         }
+
     }
 }
