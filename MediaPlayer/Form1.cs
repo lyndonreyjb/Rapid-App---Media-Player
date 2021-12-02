@@ -29,6 +29,7 @@ namespace MediaPlayer
             menuStrip1.BackColor = Color.Pink;
             btnHideShowPlaylistCLICKED.Hide();
             listBoxPlayList.Hide();
+            listBoxPlayList.Size = new Size(100,100);
             axWindowsMediaPlayer1.Hide();
             btnPause.Hide();
            
@@ -206,11 +207,25 @@ namespace MediaPlayer
         private void Time_Tick(object sender, EventArgs e)
         {
             LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+
+            //if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            //{
+            //    LengthSlider.Maximum = (int)axWindowsMediaPlayer1.Ctlcontrols.currentItem.duration;
+            //    LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            //}
+            //lblDurationStart.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPositionString;
+            //lblDurationEnd.Text = axWindowsMediaPlayer1.Ctlcontrols.currentItem.durationString.ToString();
+            //if (LengthSlider.Maximum == LengthSlider.Value)
+            //{
+            //    Time.Stop();
+            //    LengthSlider.Value = 0;
+            //    lblDurationStart.Text = "00:00";
+            //}
         }
         private void LengthSlider_Scroll(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = LengthSlider.Value;
-            Duration.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
+            lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
         }
 
         private void listBoxPlayList_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -268,6 +283,24 @@ namespace MediaPlayer
         {
             About about = new About();
             about.Show();
+        }
+
+        private void btnShuffle_Click(object sender, EventArgs e)
+        {
+            //ListBox.ObjectCollection list = listBoxPlayList.Items;
+            //Random random = new Random();
+            //int i = list.Count - 1;
+            //listBoxPlayList.BeginUpdate();
+            //while (i > 1)
+            //{
+            //    i--;
+            //    int j = random.Next(i + 1);
+            //    object value = list[j];
+            //    list[j] = list[i];
+            //    list[i] = value;
+            //}
+            //listBoxPlayList.EndUpdate();
+            //listBoxPlayList.Invalidate();
         }
     }
 }

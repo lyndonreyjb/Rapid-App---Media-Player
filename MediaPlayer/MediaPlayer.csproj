@@ -119,5 +119,44 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Logo 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Playlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\rpt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Fullscreen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

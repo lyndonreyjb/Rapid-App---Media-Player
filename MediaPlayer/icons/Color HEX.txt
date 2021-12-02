@@ -1,0 +1,2 @@
+rgb(227, 181, 164) - Background
+rgb(119, 51, 68) - Button
