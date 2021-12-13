@@ -23,10 +23,10 @@ namespace MediaPlayer
         double SkipReverseSpeed = 30; //default value for skip/reverse button 
         
 
-        public Form1()
+        public Form1()  
         {
             InitializeComponent();
-            menuStrip1.BackColor = Color.Pink;
+            //hide buttons that should not be showing on start up 
             btnHideShowPlaylistCLICKED.Hide();
             listBoxPlayList.Hide();
             listBoxPlayList.Size = new Size(100,100);
@@ -42,7 +42,7 @@ namespace MediaPlayer
            
         }
 
-        private void PrevBtn_Click(object sender, EventArgs e) // this is the prev
+        private void PrevBtn_Click(object sender, EventArgs e) // Previous button uses the listbox index to to select  the file back in line from currently playing  
         {
             int index = listBoxPlayList.SelectedIndex;
             index--;
@@ -55,7 +55,7 @@ namespace MediaPlayer
            
         }
 
-        private void NextBtn_Click(object sender, EventArgs e) // this is the next button
+        private void NextBtn_Click(object sender, EventArgs e) // Next button uses the listbox index to to select the file next in line from currently playing 
         {
 
             int index = listBoxPlayList.SelectedIndex;
@@ -69,7 +69,7 @@ namespace MediaPlayer
           
         }
 
-        private void PlayBtn_Click(object sender, EventArgs e) // this is the play button
+        private void PlayBtn_Click(object sender, EventArgs e) //  Shows the mediaplayer and starts the media file as well as hiding the play icon 
         {
             axWindowsMediaPlayer1.Show();
             axWindowsMediaPlayer1.Ctlcontrols.play();
@@ -80,24 +80,24 @@ namespace MediaPlayer
         }
 
 
-        private void RptBtn_Click(object sender, EventArgs e)
+        private void RptBtn_Click(object sender, EventArgs e) // repeats the currently playing file
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 0;
         }
 
-        private void btnFastforward_Click(object sender, EventArgs e)
+        private void btnFastforward_Click(object sender, EventArgs e) // fast forward uses the SkipReverseSpeed to which sets the amount of time to skip
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition += SkipReverseSpeed;
         }
 
-        private void btnRewind_Click(object sender, EventArgs e)
+        private void btnRewind_Click(object sender, EventArgs e) // Rewind  uses the SkipReverseSpeed to which sets the amount of time to skip
         {
               axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= SkipReverseSpeed;
         }
 
-        private void btnFullScreen_Click(object sender, EventArgs e) // Based on lyndons fullscreen method
+        private void btnFullScreen_Click(object sender, EventArgs e) // resizes window to full screen layout 
         { 
-            if(WindowState ==  FormWindowState.Normal )  // doesnt resize video player and buttons properly 
+            if(WindowState ==  FormWindowState.Normal )  
             {
                 this.WindowState = FormWindowState.Maximized;
                 FormBorderStyle = FormBorderStyle.None;
@@ -110,10 +110,10 @@ namespace MediaPlayer
                 menuStrip1.Show();
             } 
 
-           // axWindowsMediaPlayer1.fullScreen = true; thiis makes the video player fullscreen but no controls or exit fullscreen
+          
         }
 
-        private void btnFolder_Click(object sender, EventArgs e)
+        private void btnFolder_Click(object sender, EventArgs e) // opens folder to select media files
         {
             // FolderBrowserDialog folder = new FolderBrowserDialog();
 
@@ -145,13 +145,13 @@ namespace MediaPlayer
                  {
                      listBoxPlayList.Items.Add(filename[i]) ;                  
                  }*/
-                foreach(string filename  in ofd2.SafeFileNames)
+                foreach(string filename  in ofd2.SafeFileNames) // foreach file (file path) selected gets added to the listboxplaylist 
                 {
                     listBoxPlayList.Items.Add(filename);
                 }
-                listBoxPlayList.SelectedIndex = 0;
+                listBoxPlayList.SelectedIndex = 0; // start the index at 0 so we select the first file added to play first 
              
-                axWindowsMediaPlayer1.URL = axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex];
+                axWindowsMediaPlayer1.URL = axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex]; // take the path from the playlist and give it to the media player to play the file 
                 axWindowsMediaPlayer1.Show();
                 picBoxMediaPlayIcon.Hide();
                 PlayBtn.Hide();
@@ -160,28 +160,28 @@ namespace MediaPlayer
             }
         }
 
-        private void btnPause_Click(object sender, EventArgs e)
+        private void btnPause_Click(object sender, EventArgs e) // Pauses video and then hides the pause button and shows the play button 
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
             PlayBtn.Show();
             btnPause.Hide();
         }
 
-        private void btnHideShowPlaylist_Click(object sender, EventArgs e)
+        private void btnHideShowPlaylist_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
         {
             listBoxPlayList.Show();
             btnHideShowPlaylistCLICKED.Show();
             btnHideShowPlaylist.Hide();
         }
 
-        private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e)
+        private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
         {
             listBoxPlayList.Hide();
             btnHideShowPlaylistCLICKED.Hide();
             btnHideShowPlaylist.Show();
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
+        private void btnStop_Click(object sender, EventArgs e) // stops the media file 
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             axWindowsMediaPlayer1.Hide();

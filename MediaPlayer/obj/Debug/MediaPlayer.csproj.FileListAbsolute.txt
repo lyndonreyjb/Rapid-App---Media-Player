@@ -145,3 +145,26 @@ C:\Users\Salman Virji\source\repos\Rapid-App---Media-Player\dec6media\MediaPlaye
 C:\Users\Salman Virji\source\repos\Rapid-App---Media-Player\dec6media\MediaPlayer\obj\Debug\MediaPlayer.csproj.CopyComplete
 C:\Users\Salman Virji\source\repos\Rapid-App---Media-Player\dec6media\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\Salman Virji\source\repos\Rapid-App---Media-Player\dec6media\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\MediaPlayer.exe
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\MediaPlayer.pdb
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.xml
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.xml
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Microsoft.DirectX.Direct3D.xml
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\Interop.WMPLib.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.AssemblyReference.cache
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\Interop.WMPLib.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.ResolveComReference.cache
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.About.resources
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.Form1.resources
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.GenerateResource.cache
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.CoreCompileInputs.cache
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.csproj.CopyComplete
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.exe
+C:\Users\Salman Virji\Downloads\New folder (4)\Rapid-App---Media-Player\MediaPlayer\obj\Debug\MediaPlayer.pdb
