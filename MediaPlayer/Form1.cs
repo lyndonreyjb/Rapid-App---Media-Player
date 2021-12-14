@@ -21,6 +21,7 @@ namespace MediaPlayer
         string[] vPath;
         string filename;
         double SkipReverseSpeed = 30; //default value for skip/reverse button 
+        List<string> paths = new List<string>();
         
 
         public Form1()  
@@ -149,6 +150,12 @@ namespace MediaPlayer
                 {
                     listBoxPlayList.Items.Add(filename);
                 }
+
+                foreach(string filename in listBoxPlayList.Items)
+                {
+                    paths.Add(filename);
+                }
+
                 listBoxPlayList.SelectedIndex = 0; // start the index at 0 so we select the first file added to play first 
              
                 axWindowsMediaPlayer1.URL = axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex]; // take the path from the playlist and give it to the media player to play the file 
@@ -285,22 +292,24 @@ namespace MediaPlayer
             about.Show();
         }
 
-        private void btnShuffle_Click(object sender, EventArgs e)
+        private void btnShuffle_Click(object sender, EventArgs e) // Shuffles the media file 
         {
-            //ListBox.ObjectCollection list = listBoxPlayList.Items;
-            //Random random = new Random();
-            //int i = list.Count - 1;
-            //listBoxPlayList.BeginUpdate();
-            //while (i > 1)
-            //{
-            //    i--;
-            //    int j = random.Next(i + 1);
-            //    object value = list[j];
-            //    list[j] = list[i];
-            //    list[i] = value;
-            //}
-            //listBoxPlayList.EndUpdate();
-            //listBoxPlayList.Invalidate();
+            
+            Random random = new Random();
+          
+
+
+            int maxinlistbox = listBoxPlayList.Items.Count;
+           
+
+            int maxrandom = random.Next(0, maxinlistbox);
+
+            
+            selectedIndex = maxrandom;
+            listBoxPlayList.SelectedIndex = maxrandom;
+
+
+
         }
     }
 }
