@@ -45,28 +45,43 @@ namespace MediaPlayer
 
         private void PrevBtn_Click(object sender, EventArgs e) // Previous button uses the listbox index to to select  the file back in line from currently playing  
         {
-            int index = listBoxPlayList.SelectedIndex;
-            index--;
-            if (index == -1)
+            try
             {
-                index = vPath[listBoxPlayList.SelectedIndex].Count() - 1;
+                int index = listBoxPlayList.SelectedIndex;
+                index--;
+                if (index == -1)
+                {
+                    index = vPath[listBoxPlayList.SelectedIndex].Count() - 1;
+                }
+                selectedIndex = index;
+                listBoxPlayList.SelectedIndex = index;
             }
-            selectedIndex = index;
-            listBoxPlayList.SelectedIndex = index;
+            catch(Exception)
+            {
+
+            }
+            
            
         }
 
         private void NextBtn_Click(object sender, EventArgs e) // Next button uses the listbox index to to select the file next in line from currently playing 
         {
-
-            int index = listBoxPlayList.SelectedIndex;
-            index++;
-            if (index > vPath[listBoxPlayList.SelectedIndex].Count() - 1)
+            try
             {
-                index = 0;
+                int index = listBoxPlayList.SelectedIndex;
+                index++;
+                if (index > vPath[listBoxPlayList.SelectedIndex].Count() - 1)
+                {
+                    index = 0;
+                }
+                selectedIndex = index;
+                listBoxPlayList.SelectedIndex = index;
             }
-            selectedIndex = index;
-            listBoxPlayList.SelectedIndex = index;
+            catch (Exception)
+            {
+
+            }
+           
           
         }
 
@@ -151,30 +166,62 @@ namespace MediaPlayer
 
         private void btnPause_Click(object sender, EventArgs e) // Pauses video and then hides the pause button and shows the play button 
         {
-            axWindowsMediaPlayer1.Ctlcontrols.pause();
-            PlayBtn.Show();
-            btnPause.Hide();
+            try
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+                PlayBtn.Show();
+                btnPause.Hide();
+            }
+            catch (Exception)
+            {
+
+            }
+           
         }
 
         private void btnHideShowPlaylist_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
         {
-            listBoxPlayList.Show();
-            btnHideShowPlaylistCLICKED.Show();
-            btnHideShowPlaylist.Hide();
+            try
+            {
+                listBoxPlayList.Show();
+                btnHideShowPlaylistCLICKED.Show();
+                btnHideShowPlaylist.Hide();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
         {
-            listBoxPlayList.Hide();
-            btnHideShowPlaylistCLICKED.Hide();
-            btnHideShowPlaylist.Show();
+            try
+            {
+                listBoxPlayList.Hide();
+                btnHideShowPlaylistCLICKED.Hide();
+                btnHideShowPlaylist.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+           
         }
 
         private void btnStop_Click(object sender, EventArgs e) // stops the media file 
         {
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
-            axWindowsMediaPlayer1.Hide();
-            picBoxMediaPlayIcon.Show();
+            try
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.stop();
+                axWindowsMediaPlayer1.Hide();
+                picBoxMediaPlayIcon.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+          
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -195,7 +242,15 @@ namespace MediaPlayer
 
         private void Time_Tick(object sender, EventArgs e)
         {
-            LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            try
+            {
+                LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            }
+            catch (Exception)
+            {
+
+            }
+            
 
             //if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             //{
