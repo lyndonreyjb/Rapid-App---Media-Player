@@ -56,12 +56,10 @@ namespace MediaPlayer
                 selectedIndex = index;
                 listBoxPlayList.SelectedIndex = index;
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
-            
-           
         }
 
         private void NextBtn_Click(object sender, EventArgs e) // Next button uses the listbox index to to select the file next in line from currently playing 
@@ -77,13 +75,13 @@ namespace MediaPlayer
                 selectedIndex = index;
                 listBoxPlayList.SelectedIndex = index;
             }
+
             catch (Exception)
             {
 
             }
-           
-          
         }
+
 
         private void PlayBtn_Click(object sender, EventArgs e) //  Shows the mediaplayer and starts the media file as well as hiding the play icon 
         {
@@ -125,7 +123,6 @@ namespace MediaPlayer
                 FormBorderStyle = FormBorderStyle.Sizable;
                 menuStrip1.Show();
             } 
-
           
         }
 
@@ -244,32 +241,30 @@ namespace MediaPlayer
         {
             try
             {
-                LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+                
+                if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    LengthSlider.Maximum = (int)axWindowsMediaPlayer1.Ctlcontrols.currentItem.duration;
+                    LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+                }
+                lblDurationStart.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPositionString;
+              
+                if (LengthSlider.Maximum == LengthSlider.Value)
+                {
+                    Time.Stop();
+                    LengthSlider.Value = 0;
+                    lblDurationStart.Text = "00:00";
+                }
             }
             catch (Exception)
             {
 
             }
-            
-
-            //if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            //{
-            //    LengthSlider.Maximum = (int)axWindowsMediaPlayer1.Ctlcontrols.currentItem.duration;
-            //    LengthSlider.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            //}
-            //lblDurationStart.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPositionString;
-            //lblDurationEnd.Text = axWindowsMediaPlayer1.Ctlcontrols.currentItem.durationString.ToString();
-            //if (LengthSlider.Maximum == LengthSlider.Value)
-            //{
-            //    Time.Stop();
-            //    LengthSlider.Value = 0;
-            //    lblDurationStart.Text = "00:00";
-            //}
         }
         private void LengthSlider_Scroll(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = LengthSlider.Value;
-            lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
+            LengthSlider.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
             lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
 
         }
@@ -321,8 +316,7 @@ namespace MediaPlayer
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e) // show hide credits 
         {
            
-           
-           
+                   
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -343,10 +337,8 @@ namespace MediaPlayer
             }
             catch (Exception)
             {
+
             }
-
-
-
         }
 
         private void Volumelbl_Click(object sender, EventArgs e)
@@ -355,6 +347,56 @@ namespace MediaPlayer
         }
 
         private void Volumelbl_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBoxMediaPlayIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void controlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mediaSpeedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skipReverseSpeedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lblDurationStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
 
         }

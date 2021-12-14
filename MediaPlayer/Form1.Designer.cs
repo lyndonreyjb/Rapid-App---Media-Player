@@ -53,18 +53,17 @@ namespace MediaPlayer
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.listBoxPlayList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnHideShowPlaylist = new System.Windows.Forms.Button();
+            this.VolumeSlider = new System.Windows.Forms.TrackBar();
             this.btnFullScreen = new System.Windows.Forms.Button();
-            this.lblDurationEnd = new System.Windows.Forms.Label();
             this.lblDurationStart = new System.Windows.Forms.Label();
             this.Volumelbl = new System.Windows.Forms.Label();
-            this.VolumeSlider = new System.Windows.Forms.TrackBar();
             this.btnFastforward = new System.Windows.Forms.Button();
             this.PrevBtn = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.PlayBtn = new System.Windows.Forms.Button();
             this.btnHideShowPlaylistCLICKED = new System.Windows.Forms.Button();
             this.nextBtn = new System.Windows.Forms.Button();
-            this.btnHideShowPlaylist = new System.Windows.Forms.Button();
             this.RptBtn = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnShuffle = new System.Windows.Forms.Button();
@@ -94,6 +93,7 @@ namespace MediaPlayer
             this.menuStrip1.Size = new System.Drawing.Size(931, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -104,6 +104,7 @@ namespace MediaPlayer
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.toolStripMenuItem1.Text = "Media";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // openFileToolStripMenuItem
             // 
@@ -135,6 +136,7 @@ namespace MediaPlayer
             this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
             this.controlsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.controlsToolStripMenuItem.Text = "Controls";
+            this.controlsToolStripMenuItem.Click += new System.EventHandler(this.controlsToolStripMenuItem_Click);
             // 
             // playListToolStripMenuItem
             // 
@@ -144,6 +146,7 @@ namespace MediaPlayer
             this.playListToolStripMenuItem.Name = "playListToolStripMenuItem";
             this.playListToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.playListToolStripMenuItem.Text = "PlayList";
+            this.playListToolStripMenuItem.Click += new System.EventHandler(this.playListToolStripMenuItem_Click);
             // 
             // showToolStripMenuItem
             // 
@@ -169,6 +172,7 @@ namespace MediaPlayer
             this.mediaSpeedToolStripMenuItem.Name = "mediaSpeedToolStripMenuItem";
             this.mediaSpeedToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.mediaSpeedToolStripMenuItem.Text = "Media Speed";
+            this.mediaSpeedToolStripMenuItem.Click += new System.EventHandler(this.mediaSpeedToolStripMenuItem_Click);
             // 
             // x05ToolStripMenuItem
             // 
@@ -207,6 +211,7 @@ namespace MediaPlayer
             this.skipReverseSpeedToolStripMenuItem.Name = "skipReverseSpeedToolStripMenuItem";
             this.skipReverseSpeedToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.skipReverseSpeedToolStripMenuItem.Text = "Skip/Reverse Speed";
+            this.skipReverseSpeedToolStripMenuItem.Click += new System.EventHandler(this.skipReverseSpeedToolStripMenuItem_Click);
             // 
             // secondsToolStripMenuItem
             // 
@@ -236,6 +241,10 @@ namespace MediaPlayer
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            // 
             // listBoxPlayList
             // 
             this.listBoxPlayList.AllowDrop = true;
@@ -258,11 +267,10 @@ namespace MediaPlayer
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(181)))), ((int)(((byte)(168)))));
+            this.groupBox1.Controls.Add(this.lblDurationStart);
             this.groupBox1.Controls.Add(this.btnHideShowPlaylist);
             this.groupBox1.Controls.Add(this.VolumeSlider);
             this.groupBox1.Controls.Add(this.btnFullScreen);
-            this.groupBox1.Controls.Add(this.lblDurationEnd);
-            this.groupBox1.Controls.Add(this.lblDurationStart);
             this.groupBox1.Controls.Add(this.Volumelbl);
             this.groupBox1.Controls.Add(this.btnFastforward);
             this.groupBox1.Controls.Add(this.PrevBtn);
@@ -284,6 +292,34 @@ namespace MediaPlayer
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnHideShowPlaylist
+            // 
+            this.btnHideShowPlaylist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHideShowPlaylist.BackgroundImage = global::MediaPlayer.Properties.Resources.Playlist;
+            this.btnHideShowPlaylist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHideShowPlaylist.FlatAppearance.BorderSize = 0;
+            this.btnHideShowPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnHideShowPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHideShowPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHideShowPlaylist.Location = new System.Drawing.Point(71, 17);
+            this.btnHideShowPlaylist.Name = "btnHideShowPlaylist";
+            this.btnHideShowPlaylist.Size = new System.Drawing.Size(30, 30);
+            this.btnHideShowPlaylist.TabIndex = 14;
+            this.btnHideShowPlaylist.UseVisualStyleBackColor = true;
+            this.btnHideShowPlaylist.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
+            // 
+            // VolumeSlider
+            // 
+            this.VolumeSlider.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VolumeSlider.Location = new System.Drawing.Point(147, 16);
+            this.VolumeSlider.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.VolumeSlider.Maximum = 100;
+            this.VolumeSlider.Name = "VolumeSlider";
+            this.VolumeSlider.Size = new System.Drawing.Size(112, 45);
+            this.VolumeSlider.TabIndex = 17;
+            this.VolumeSlider.Scroll += new System.EventHandler(this.VolumeSlider_Scroll);
+            this.VolumeSlider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.VolumeSlider_MouseMove);
+            // 
             // btnFullScreen
             // 
             this.btnFullScreen.BackColor = System.Drawing.Color.Transparent;
@@ -301,24 +337,16 @@ namespace MediaPlayer
             this.btnFullScreen.UseVisualStyleBackColor = false;
             this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
             // 
-            // lblDurationEnd
-            // 
-            this.lblDurationEnd.AutoSize = true;
-            this.lblDurationEnd.Location = new System.Drawing.Point(912, 77);
-            this.lblDurationEnd.Name = "lblDurationEnd";
-            this.lblDurationEnd.Size = new System.Drawing.Size(13, 13);
-            this.lblDurationEnd.TabIndex = 21;
-            this.lblDurationEnd.Text = "0";
-            // 
             // lblDurationStart
             // 
-            this.lblDurationStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDurationStart.AutoSize = true;
-            this.lblDurationStart.Location = new System.Drawing.Point(12, 77);
+            this.lblDurationStart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDurationStart.Location = new System.Drawing.Point(3, 41);
             this.lblDurationStart.Name = "lblDurationStart";
             this.lblDurationStart.Size = new System.Drawing.Size(13, 13);
             this.lblDurationStart.TabIndex = 20;
             this.lblDurationStart.Text = "0";
+            this.lblDurationStart.Click += new System.EventHandler(this.lblDurationStart_Click);
             // 
             // Volumelbl
             // 
@@ -330,18 +358,6 @@ namespace MediaPlayer
             this.Volumelbl.TabIndex = 19;
             this.Volumelbl.Text = "0";
             this.Volumelbl.Click += new System.EventHandler(this.Volumelbl_Click_1);
-            // 
-            // VolumeSlider
-            // 
-            this.VolumeSlider.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.VolumeSlider.Location = new System.Drawing.Point(147, 16);
-            this.VolumeSlider.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.VolumeSlider.Maximum = 100;
-            this.VolumeSlider.Name = "VolumeSlider";
-            this.VolumeSlider.Size = new System.Drawing.Size(112, 45);
-            this.VolumeSlider.TabIndex = 17;
-            this.VolumeSlider.Scroll += new System.EventHandler(this.VolumeSlider_Scroll);
-            this.VolumeSlider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.VolumeSlider_MouseMove);
             // 
             // btnFastforward
             // 
@@ -373,6 +389,7 @@ namespace MediaPlayer
             this.PrevBtn.Size = new System.Drawing.Size(42, 38);
             this.PrevBtn.TabIndex = 0;
             this.PrevBtn.UseVisualStyleBackColor = true;
+            this.PrevBtn.Click += new System.EventHandler(this.PrevBtn_Click);
             // 
             // btnStop
             // 
@@ -416,7 +433,7 @@ namespace MediaPlayer
             this.btnHideShowPlaylistCLICKED.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnHideShowPlaylistCLICKED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideShowPlaylistCLICKED.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(12, 17);
+            this.btnHideShowPlaylistCLICKED.Location = new System.Drawing.Point(71, 17);
             this.btnHideShowPlaylistCLICKED.Name = "btnHideShowPlaylistCLICKED";
             this.btnHideShowPlaylistCLICKED.Size = new System.Drawing.Size(30, 30);
             this.btnHideShowPlaylistCLICKED.TabIndex = 15;
@@ -438,22 +455,6 @@ namespace MediaPlayer
             this.nextBtn.TabIndex = 2;
             this.nextBtn.UseVisualStyleBackColor = true;
             this.nextBtn.Click += new System.EventHandler(this.NextBtn_Click);
-            // 
-            // btnHideShowPlaylist
-            // 
-            this.btnHideShowPlaylist.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHideShowPlaylist.BackgroundImage = global::MediaPlayer.Properties.Resources.Playlist;
-            this.btnHideShowPlaylist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHideShowPlaylist.FlatAppearance.BorderSize = 0;
-            this.btnHideShowPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnHideShowPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHideShowPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHideShowPlaylist.Location = new System.Drawing.Point(12, 16);
-            this.btnHideShowPlaylist.Name = "btnHideShowPlaylist";
-            this.btnHideShowPlaylist.Size = new System.Drawing.Size(30, 30);
-            this.btnHideShowPlaylist.TabIndex = 14;
-            this.btnHideShowPlaylist.UseVisualStyleBackColor = true;
-            this.btnHideShowPlaylist.Click += new System.EventHandler(this.btnHideShowPlaylist_Click);
             // 
             // RptBtn
             // 
@@ -557,6 +558,7 @@ namespace MediaPlayer
             this.axWindowsMediaPlayer1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(931, 541);
             this.axWindowsMediaPlayer1.TabIndex = 1;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Time
             // 
@@ -575,6 +577,7 @@ namespace MediaPlayer
             this.picBoxMediaPlayIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picBoxMediaPlayIcon.TabIndex = 17;
             this.picBoxMediaPlayIcon.TabStop = false;
+            this.picBoxMediaPlayIcon.Click += new System.EventHandler(this.picBoxMediaPlayIcon_Click);
             // 
             // Form1
             // 
@@ -648,7 +651,6 @@ namespace MediaPlayer
         private System.Windows.Forms.ToolStripMenuItem minuteToolStripMenuItem;
         private System.Windows.Forms.Button PlayBtn;
         private System.Windows.Forms.Button btnHideShowPlaylist;
-        private System.Windows.Forms.Label lblDurationEnd;
     }
 }
 
