@@ -22,64 +22,85 @@ namespace MediaPlayer
         string filename;
         double SkipReverseSpeed = 30; //default value for skip/reverse button 
         List<string> paths = new List<string>();
-        
 
-        public Form1()  
+
+        public Form1()
         {
             InitializeComponent();
             //hide buttons that should not be showing on start up 
             btnHideShowPlaylistCLICKED.Hide();
             listBoxPlayList.Hide();
-            listBoxPlayList.Size = new Size(100,100);
+            listBoxPlayList.Size = new Size(100, 100);
             axWindowsMediaPlayer1.Hide();
             btnPause.Hide();
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+
             Time.Start();
-           
+
         }
 
         private void PrevBtn_Click(object sender, EventArgs e) // Previous button uses the listbox index to to select  the file back in line from currently playing  
         {
+
+
             try
             {
-                int index = listBoxPlayList.SelectedIndex;
-                index--;
-                if (index == -1)
+                if (listBoxPlayList.Items.Count != 0) // checks if there is a media file 
                 {
-                    index = vPath[listBoxPlayList.SelectedIndex].Count() - 1;
+                    int index = listBoxPlayList.SelectedIndex;
+                    index--;
+                    if (index == -1)
+                    {
+                        index = vPath[listBoxPlayList.SelectedIndex].Count() - 1;
+                    }
+                    selectedIndex = index;
+                    listBoxPlayList.SelectedIndex = index;
                 }
-                selectedIndex = index;
-                listBoxPlayList.SelectedIndex = index;
             }
+
             catch (Exception)
             {
 
             }
+            
+           
         }
+
+
+
+
 
         private void NextBtn_Click(object sender, EventArgs e) // Next button uses the listbox index to to select the file next in line from currently playing 
         {
             try
             {
-                int index = listBoxPlayList.SelectedIndex;
-                index++;
-                if (index > vPath[listBoxPlayList.SelectedIndex].Count() - 1)
+                if (listBoxPlayList.Items.Count != 0) // checks if there is a media file 
                 {
-                    index = 0;
+
+                    int index = listBoxPlayList.SelectedIndex;
+                    index++;
+                    if (index >= vPath[listBoxPlayList.SelectedIndex].Count() - 1)
+                    {
+                        index = 0;
+
+                    }
+
+
+                    selectedIndex = index;
+                    listBoxPlayList.SelectedIndex = index;
                 }
-                selectedIndex = index;
-                listBoxPlayList.SelectedIndex = index;
             }
 
             catch (Exception)
             {
 
             }
+           
+          
         }
 
 
@@ -106,23 +127,24 @@ namespace MediaPlayer
 
         private void btnRewind_Click(object sender, EventArgs e) // Rewind  uses the SkipReverseSpeed to which sets the amount of time to skip
         {
-              axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= SkipReverseSpeed;
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition -= SkipReverseSpeed;
         }
 
         private void btnFullScreen_Click(object sender, EventArgs e) // resizes window to full screen layout 
-        { 
-            if(WindowState ==  FormWindowState.Normal )  
+        {
+            if (WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
                 FormBorderStyle = FormBorderStyle.None;
                 menuStrip1.Hide();
             }
-            else if (WindowState == FormWindowState.Maximized )
+            else if (WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.Sizable;
                 menuStrip1.Show();
             } 
+
           
         }
 
@@ -133,25 +155,25 @@ namespace MediaPlayer
             ofd2.Title = "Open Media File";
             ofd2.Filter = "WMV |*.wmv|WAV|*.wav|MP3|*.mp3|MP4|*.mp4|MKV|*.mkv"; // editied to to play video files previously couldnt show video file types                                                                                // ofd2.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             ofd2.Multiselect = true;
-            
+
             if (ofd2.ShowDialog() == DialogResult.OK)
             {
                 filename = ofd2.SafeFileName;
                 vPath = ofd2.FileNames;
                 listBoxPlayList.Items.Clear();
 
-                foreach(string filename  in ofd2.SafeFileNames) // foreach file (file path) selected gets added to the listboxplaylist 
+                foreach (string filename in ofd2.SafeFileNames) // foreach file (file path) selected gets added to the listboxplaylist 
                 {
                     listBoxPlayList.Items.Add(filename);
                 }
 
-                foreach(string filename in listBoxPlayList.Items)
+                foreach (string filename in listBoxPlayList.Items)
                 {
                     paths.Add(filename);
                 }
 
                 listBoxPlayList.SelectedIndex = 0; // start the index at 0 so we select the first file added to play first 
-             
+
                 axWindowsMediaPlayer1.URL = axWindowsMediaPlayer1.URL = vPath[listBoxPlayList.SelectedIndex]; // take the path from the playlist and give it to the media player to play the file 
                 axWindowsMediaPlayer1.Show();
                 picBoxMediaPlayIcon.Hide();
@@ -173,7 +195,7 @@ namespace MediaPlayer
             {
 
             }
-           
+
         }
 
         private void btnHideShowPlaylist_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
@@ -188,7 +210,7 @@ namespace MediaPlayer
             {
 
             }
-            
+
         }
 
         private void btnHideShowPlaylistCLICKED_Click(object sender, EventArgs e) // toggle for showing and hiding the playlist
@@ -203,7 +225,7 @@ namespace MediaPlayer
             {
 
             }
-           
+
         }
 
         private void btnStop_Click(object sender, EventArgs e) // stops the media file 
@@ -218,7 +240,7 @@ namespace MediaPlayer
             {
 
             }
-          
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -260,11 +282,12 @@ namespace MediaPlayer
             {
 
             }
+           
         }
         private void LengthSlider_Scroll(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = LengthSlider.Value;
-            LengthSlider.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
+            lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
             lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
 
         }
@@ -276,15 +299,15 @@ namespace MediaPlayer
 
         private void x05ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 0.5
         {
-            
+
             axWindowsMediaPlayer1.settings.rate = 0.5;
-           
+
         }
 
         private void x10ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 1
         {
             axWindowsMediaPlayer1.settings.rate = 1;
-            
+
         }
 
         private void x2ToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip - controls -media speed - 2
@@ -309,14 +332,15 @@ namespace MediaPlayer
 
         private void minuteToolStripMenuItem_Click(object sender, EventArgs e) // toolstrip Skip/Reverse - toggle - 1min
         {
-            
+
             SkipReverseSpeed = 60;
         }
 
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e) // show hide credits 
         {
            
-                   
+           
+           
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
