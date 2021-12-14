@@ -123,17 +123,6 @@
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnHideShowPlaylist.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAOlJREFUWEft
-        1U0OATEYxvGJOIWPtTU7F3ADt+EUDiFEIrF1GQdAsLIgPA/epHnzoq20G/0nv2Q6Y9qOkKlKpcQNoPY8
-        DOv2I4nHGxhBgyd80xOGktxzV1jDEOqQJVl8BRdn3IMsyYKsCWNYPkaZcjcQlNwYS9Jj79zJYkh6nL2y
-        gegNyI2xJD32zp0shqTH2fuvDbRhASfYwRSiNyA3fjMBxsW5qPUZCs6axNIHxie3rovk8Wu3FhbJ+7SB
-        AySP73hrcZpBcNZEFvkRdmAP+voWWhCcnuidM3SB8Z8wh+MLnzxq8VIpY1V1B+FS428IqNMHAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
   <data name="axWindowsMediaPlayer1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w

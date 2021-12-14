@@ -116,20 +116,6 @@ namespace MediaPlayer
 
         private void btnFolder_Click(object sender, EventArgs e) // opens folder to select media files
         {
-            // FolderBrowserDialog folder = new FolderBrowserDialog();
-
-            // folder.ShowNewFolderButton = true;
-
-            // DialogResult result = folder.ShowDialog();
-            //// d.Filter = "Video | *.mp4";
-            // if (result == DialogResult.OK)
-            // {
-            //    //textBox1.Text = folderDlg.SelectedPath;
-            //     Environment.SpecialFolder root = folder.RootFolder;
-            //     vPath = folder.SelectedPath;
-            //     axWindowsMediaPlayer1.URL = vPath;
-            // }
-
 
             OpenFileDialog ofd2 = new OpenFileDialog();
             ofd2.Title = "Open Media File";
@@ -142,10 +128,6 @@ namespace MediaPlayer
                 vPath = ofd2.FileNames;
                 listBoxPlayList.Items.Clear();
 
-                /* for (int i = 0; i < filename.Length; i++)
-                 {
-                     listBoxPlayList.Items.Add(filename[i]) ;                  
-                 }*/
                 foreach(string filename  in ofd2.SafeFileNames) // foreach file (file path) selected gets added to the listboxplaylist 
                 {
                     listBoxPlayList.Items.Add(filename);
@@ -233,6 +215,8 @@ namespace MediaPlayer
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = LengthSlider.Value;
             lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
+            lblDurationStart.Text = axWindowsMediaPlayer1.currentMedia.duration.ToString();
+
         }
 
         private void listBoxPlayList_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -294,21 +278,29 @@ namespace MediaPlayer
 
         private void btnShuffle_Click(object sender, EventArgs e) // Shuffles the media file 
         {
-            
-            Random random = new Random();
-          
+            try
+            {
+                Random random = new Random();
+                int maxinlistbox = listBoxPlayList.Items.Count;
+                int maxrandom = random.Next(0, maxinlistbox);
+                selectedIndex = maxrandom;
+                listBoxPlayList.SelectedIndex = maxrandom;
+            }
+            catch (Exception)
+            {
+            }
 
 
-            int maxinlistbox = listBoxPlayList.Items.Count;
-           
 
-            int maxrandom = random.Next(0, maxinlistbox);
+        }
 
-            
-            selectedIndex = maxrandom;
-            listBoxPlayList.SelectedIndex = maxrandom;
+        private void Volumelbl_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Volumelbl_Click_1(object sender, EventArgs e)
+        {
 
         }
     }
